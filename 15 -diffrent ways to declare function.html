@@ -1,0 +1,22 @@
+<html>
+<head>
+
+</head>
+<body>
+    <button class="clickMe">Click Me!</button>
+    <script>const button = document.querySelector('.clickMe');
+         
+         const wes = {
+           yellHigh() {
+    console.log('HIGH!');
+  },
+         };
+
+console.log(button);
+button.addEventListener('click', wes.yellHigh);
+
+         setTimeout(wes.yellHigh, 1000);
+    </script>
+
+</body>
+</html>
