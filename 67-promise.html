@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+
+    <script>
+        function makePizza(toppings) {
+            return new Promise(function (resolve, reject) {
+
+                if (toppings === '') {
+                    reject('unknown topping');
+                }
+
+                setTimeout(function () {
+                    resolve(`Here is pizza with ${toppings}`);
+                }, 1000);
+
+
+            });
+        }
+
+
+        //makePizza('pepperoni')
+        //    .then(function (pizza) {
+        //        console.log(pizza);
+        //        return makePizza('ham');
+        //    })
+        //    .then(function (pizza) {
+        //        console.log(pizza);
+        //    });
+
+        //makePizza('')
+        //    .then(pizza => console.log(pizza))
+        //    .catch(error => {
+        //        console.log(error);
+        //    })
+
+
+        const rej = makePizza('');
+        const res = makePizza('pepperoni');
+
+        const promise2 = Promise.allSettled([rej, res]);
+
+        promise2.then(
+            result => console.log(result));
+    </script>
+
+</body>
+</html

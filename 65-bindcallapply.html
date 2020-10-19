@@ -1,0 +1,40 @@
+﻿// JavaScript source <!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript Slider</title>
+</head>
+
+<body>
+ 
+ <script>
+        const Pizza =
+        {
+           tax : 0.5,
+           price:  10,
+           calculate(n)
+           {
+               return  (( this.price * n ) * this.tax) + ( this.price * n );
+           }
+        };
+
+       const calc = Pizza.calculate.bind(Pizza);
+
+       console.log(calc(5));
+
+      const invoke = Pizza.calculate.call(Pizza,-1);
+
+      console.log(invoke);
+
+      const apply = Pizza.calculate.apply(Pizza,[-1]);
+      console.log(apply);
+
+
+
+
+ </script>
+</body>
+
+</html>
+code

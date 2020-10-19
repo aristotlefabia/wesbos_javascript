@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <style>
+        .red{
+            margin : 5rem;
+            background : red;
+            padding : 5rem;
+            width : 5rem;
+        }
+       .red.green{
+            margin : 5rem;
+            background : green;
+            padding : 5rem;
+            width : 5rem;
+        }
+       .red.green.blue{
+            margin : 5rem;
+            background : blue;
+            padding : 5rem;
+            width : 5rem;
+        }
+    </style>
+    <div class="red">
+        Click Here
+    </div>
+
+ <script>
+     const go = document.querySelector('.red');
+
+     function wait(ms=0) {
+          return new Promise(function (resolve, reject) {
+                    setTimeout(function (e) {
+                          resolve(`2`);
+                    }, ms);
+                });
+     }
+
+     go.addEventListener('click', function (e) {
+        const target = e.currentTarget;
+         wait(1000)
+             .then(function (e) {
+                 target.classList.add('green');
+                 return wait(1000);
+             })
+             .then(function (e) {
+                target.classList.add('blue');
+                 return wait(1000);
+             })
+             .then(function (e) {
+               target.classList.remove('blue');
+             });
+        // new Promise(function (resolve, reject) {
+        //     setTimeout(function () {
+        //         target.classList.add('green');
+        //         resolve(`1`);
+        //     }, 1000);
+        // })
+        //     .then(function (e) {
+        //        console.log(e);
+        //        return new Promise(function (resolve, reject) {
+        //            setTimeout(function (e) {
+        //                target.classList.add('blue');
+        //                resolve(`2`);
+        //            }, 1000);
+        //        });
+        //    })
+        //.then(function (e) {
+        //    target.classList.remove('blue');
+        //});
+
+     //    setTimeout(function () {
+     //        target.classList.add('green');
+     //        setTimeout(function () {
+     //            target.classList.add('blue');
+
+     //            setTimeout(function () {
+     //                 target.classList.remove('blue');
+     //               }, 1000);
+     //        }, 1000);
+
+     //    }, 1000);
+
+     });
+
+
+
+ </script>
+
+</body>
+</html>
