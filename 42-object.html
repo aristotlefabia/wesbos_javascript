@@ -1,0 +1,23 @@
+<html>
+<head>
+
+</head>
+<body>
+    <input type="text" name="wes" value = "wes">
+</body>
+<script>const person = {
+  name: 'Wes',
+  age: 32,
+    introduce() {
+    return `Hi, i am ${this.name} , ${this.age} old`;
+  },
+};
+const text = document.querySelector('[name="wes"]');
+console.log(text);
+
+const anotherText = document.querySelector('[type="text"]');
+console.log(anotherText);
+
+console.log(text.value, ':', text.name, ':', text.type);
+    </script>
+</html>

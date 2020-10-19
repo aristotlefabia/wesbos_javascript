@@ -1,0 +1,41 @@
+<html>
+<head></head>
+<body>
+<script>const names = ['wes', 'kait', 'snickers'];
+
+    // const sorted = names.sort((a, b) => (a < b ? 1 : -1));
+    // console.log('sorted:', sorted);
+
+    // const spreadArrah = [...names];
+    // console.log(spreadArrah);
+
+    const models = [
+      { text: 'bianchi', model: 'bicycle' },
+      { text: 'trek1', model: 'mtb' },
+      { text: 'trek2', model: 'mtb' },
+      { text: 'trek3', model: 'mtb' },
+      { text: 'tre4k', model: 'mtb' },
+      { text: 'trek5', model: 'mtb' },
+      { text: 'trek6', model: 'mtb' },
+    ];
+
+const index = models.findIndex((obj) => {
+  console.log(obj);
+  if (obj.text === 'trek3') {
+    return true;
+  }
+
+      return false;
+});
+
+    const newArray = [
+  ...models.slice(0, index),
+  { text: 'xxx', model: 'xxxx' },
+  ...models.slice(index + 1),
+];
+
+    console.log('index:', index);
+</script>
+
+</body>
+</html>

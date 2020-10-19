@@ -7,10 +7,12 @@ function slugify(sentence, lowercase) {
 }
 
 const values = [0, NaN, null, undefined, '', -1, [], {}];
-values.forEach((value) => {
+values.forEach((valuec) => {
   if (value) {
     console.log(`true ${value}`);
   } else {
     console.log(`false ${value}`);
   }
 });
+
+//

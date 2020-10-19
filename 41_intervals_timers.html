@@ -1,0 +1,54 @@
+<html>
+<head></head>
+
+<body>
+    <button class="stop">Stop</button>
+    <label class="labelMessage" for=""></label>
+<script>
+let remainingTime = 5;
+const interval = setInterval(() => {
+  remainingTime -= 1;
+  console.log(remainingTime);
+
+  const message = document.querySelector('.labelMessage');
+  message.innerHTML = `Remaining time ${remainingTime}`;
+
+  if (remainingTime == 0) {
+    document.body.innerHTML = `<p>Time Out</p>`;
+    clearInterval(interval);
+  }
+}, 1000);
+
+const button = document.querySelector('.stop');
+button.addEventListener('click', function () {
+  clearInterval(interval);
+  const message = document.querySelector('.labelMessage');
+  message.innerHTML = `Stopped countdown at ${remainingTime} ${
+    remainingTime > 1 ? 'seconds' : 'second'
+  }`;
+
+  // document.body.innerHTML = `<p>Stop counter</p>`;
+});
+</script>
+   
+  <!-- <button class="stop">Stop Countdown</button>;
+<script>let counter = 5;
+
+  const interval = setInterval(function () {
+    document.body.innerHTML = `<button class= "stop">Stop Countdown</button><p>This message will self destruct in ${counter} seconds.`;
+    const button = document.querySelector('.stop');
+  console.log(button);
+  button.addEventListener('click', function () {
+      const remaining = counter;
+      clearInterval(interval);
+      document.body.innerHTML = `<button class= "stop">Stop Countdown</button><p>${remaining} seconds remained before halt.</p>`;
+  });
+  counter -= 1;
+  }, 1000);
+
+
+
+
+</script> -->
+</body>
+</html>
