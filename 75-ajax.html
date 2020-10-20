@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+   <div class ="user">
+       Message
+   </div>
+<script>
+    const baseEndpoint = 'https://api.github.com';
+    const userEndPoint = `${baseEndpoint}/users`;
+
+    const userEl = document.querySelector('.user');
+    console.log(userEl);
+
+    async function displayUser(userName) {
+        userEl.textContent = "...Loading";
+
+        const response = await fetch(`${userEndPoint}/${userName}`);
+        console.log(response);
+        const data = await response.json();
+        console.log(data);
+        userEl.textContent = Object.values(data).join('\n');
+
+    }
+    displayUser('stolinski123').catch(error => console.log(error));
+    
+</script>
+
+</body>
+</html>
